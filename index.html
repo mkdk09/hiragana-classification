@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>ひらがな認識</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.14.2/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+        <script src="main.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="bg"></div>
+        <div class="main">
+            <h1>ひらがな認識</h1>
+            <p>ひらがなを書いてください</p>
+            <canvas id="canvas" width="280" height="280"></canvas>
+            <ul class="btn">
+                <li><div id="btn1" onclick="prediction()">Prediction</div></li>
+                <li><div id="btn2" onclick="reset()">Reset</div></li>
+            </ul>
+            <div id="output"></div>
+        </div>
+    </body>
+</html>
