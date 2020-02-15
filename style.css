@@ -22,9 +22,9 @@ p {
     border-radius: 5px;
     background: #00aaff;
     /*box-shadow: 0 4px 0 #0088cc;*/
-	text-align: center;
+    text-align: center;
     color: white;
-	font-weight: bold;
+    font-weight: bold;
     cursor: pointer;
     border-color: black;
     border-style: solid;
@@ -37,10 +37,14 @@ p {
     border-radius: 5px;
     background: #00aaff;
     /*box-shadow: 0 4px 0 #0088cc;*/
-	text-align: center;
+    text-align: center;
     color: white;
-	font-weight: bold;
+    font-weight: bold;
     cursor: pointer;
     border-color: black;
     border-style: solid;
+}
+
+li {
+    padding-bottom: 10px;
 }
