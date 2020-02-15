@@ -1,3 +1,17 @@
+const hiragana = ['あ', 'い', 'う', 'え', 'お',
+                  'か', 'が', 'き', 'ぎ', 'く',
+                  'ぐ', 'け', 'げ', 'こ', 'ご',
+                  'さ', 'ざ', 'し', 'じ', 'す',
+                  'ず', 'せ', 'ぜ', 'そ', 'ぞ',
+                  'た', 'だ', 'ち', 'ぢ', 'つ',
+                  'づ', 'て', 'で', 'と', 'ど',
+                  'な', 'に', 'ぬ', 'ね', 'の',
+                  'は', 'ば', 'ひ', 'び', 'ふ',
+                  'ぶ', 'へ', 'べ', 'ほ', 'ぼ',
+                  'ま', 'み', 'む', 'め', 'も',
+                  'や', 'ゆ', 'よ',
+                  'ら', 'り', 'る', 'れ', 'ろ',
+                  'わ', 'ゐ', 'ゑ', 'を', 'ん'];
 let drawElement, signaturePad;
 let model;
 let output;
@@ -5,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     output = document.getElementById('output');
     drawElement = document.getElementById('canvas');
     signaturePad = new SignaturePad(drawElement, {
-        minWidth: 12,
-        maxWidth: 12,
+        minWidth: 6,
+        maxWidth: 6,
         penColor: 'black',
         backgroundColor: 'white',
     });
@@ -48,10 +62,10 @@ function reset() {
 function prediction() {
     const imageData = getImageData();
     const accuracyScores = getAccuracyScores(imageData);
-    const maxAccuracy = accuracyScores.indexOf(Math.max.apply(null, accuracyScores));
+    const prediction = accuracyScores.indexOf(Math.max.apply(null, accuracyScores));
     const maxscore = Math.max.apply(null, accuracyScores);
 
     console.log(maxscore);
-    console.log(maxAccuracy);
-    output.innerText = maxAccuracy;
+    console.log(prediction);
+    output.innerText = `${hiragana[prediction]} : ${Math.round(maxscore * 100 * 100) / 100}%`;
 }
