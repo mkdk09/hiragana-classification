@@ -56,7 +56,12 @@ function getAccuracyScores(imageData) {
 
 function reset() {
     signaturePad.clear();
-    output.innerText = "";
+    /* output.innerText = "";*/
+    const elements = document.querySelectorAll(".accuracy");
+    elements.forEach(el => {
+	el.parentNode.classList.remove('is-selected');
+        el.innerText = '-';
+    })
 }
 
 function prediction() {
@@ -65,7 +70,16 @@ function prediction() {
     const prediction = accuracyScores.indexOf(Math.max.apply(null, accuracyScores));
     const maxscore = Math.max.apply(null, accuracyScores);
 
+    const elements = document.querySelectorAll(".accuracy");
+    elements.forEach(el => {
+	el.parentNode.classList.remove('is-selected');
+	const rowIndex = Number(el.dataset.rowIndex);
+	if (prediction === rowIndex) {
+	    el.parentNode.classList.add('is-selected');
+	}
+	el.innerText = `${Math.round(accuracyScores[rowIndex] * 100 * 100) / 100}%`;
+    })
     console.log(maxscore);
     console.log(prediction);
-    output.innerText = `${hiragana[prediction]} : ${Math.round(maxscore * 100 * 100) / 100}%`;
+    /* output.innerText = `${hiragana[prediction]} : ${Math.round(maxscore * 100 * 100) / 100}%`; */
 }

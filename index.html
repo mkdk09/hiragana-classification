@@ -18,7 +18,327 @@
                 <li><div id="btn1" onclick="prediction()">Prediction</div></li>
                 <li><div id="btn2" onclick="reset()">Reset</div></li>
             </ul>
-            <div id="output"></div>
+	      </div>
+        <div id="output"></div>
+	      <div class="column">
+          <table class="table1">
+            <thead>
+              <tr>
+                <th>ひらがな</th>
+                <th>正解率</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>あ</th>
+                <td class="accuracy" data-row-index="0">-</td>
+              </tr>
+              <tr>
+                <th>い</th>
+                <td class="accuracy" data-row-index="1">-</td>
+              </tr>
+              <tr>
+                <th>う</th>
+                <td class="accuracy" data-row-index="2">-</td>
+              </tr>
+              <tr>
+                <th>え</th>
+                <td class="accuracy" data-row-index="3">-</td>
+              </tr>
+              <tr>
+                <th>お</th>
+                <td class="accuracy" data-row-index="4">-</td>
+              </tr>
+              <tr>
+                <th>か</th>
+                <td class="accuracy" data-row-index="5">-</td>
+              </tr>
+              <tr>
+                <th>が</th>
+                <td class="accuracy" data-row-index="6">-</td>
+              </tr>
+              <tr>
+                <th>き</th>
+                <td class="accuracy" data-row-index="7">-</td>
+              </tr>
+              <tr>
+                <th>ぎ</th>
+                <td class="accuracy" data-row-index="8">-</td>
+              </tr>
+              <tr>
+                <th>く</th>
+                <td class="accuracy" data-row-index="9">-</td>
+              </tr>
+	            <tr>
+                <th>ぐ</th>
+                <td class="accuracy" data-row-index="10">-</td>
+              </tr>
+              <tr>
+                <th>け</th>
+                <td class="accuracy" data-row-index="11">-</td>
+              </tr>
+              <tr>
+                <th>げ</th>
+                <td class="accuracy" data-row-index="12">-</td>
+              </tr>
+              <tr>
+                <th>こ</th>
+                <td class="accuracy" data-row-index="13">-</td>
+              </tr>
+              <tr>
+                <th>ご</th>
+                <td class="accuracy" data-row-index="14">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="column">
+          <table class="table2">
+            <thead>
+              <tr>
+                <th>ひらがな</th>
+                <th>正解率</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>さ</th>
+                <td class="accuracy" data-row-index="15">-</td>
+              </tr>
+              <tr>
+                <th>ざ</th>
+                <td class="accuracy" data-row-index="16">-</td>
+              </tr>
+              <tr>
+                <th>し</th>
+                <td class="accuracy" data-row-index="17">-</td>
+              </tr>
+              <tr>
+                <th>じ</th>
+                <td class="accuracy" data-row-index="18">-</td>
+              </tr>
+              <tr>
+                <th>す</th>
+                <td class="accuracy" data-row-index="19">-</td>
+              </tr>
+	            <tr>
+                <th>ず</th>
+                <td class="accuracy" data-row-index="20">-</td>
+              </tr>
+              <tr>
+                <th>せ</th>
+                <td class="accuracy" data-row-index="21">-</td>
+              </tr>
+              <tr>
+                <th>ぜ</th>
+                <td class="accuracy" data-row-index="22">-</td>
+              </tr>
+              <tr>
+                <th>そ</th>
+                <td class="accuracy" data-row-index="23">-</td>
+              </tr>
+              <tr>
+                <th>ぞ</th>
+                <td class="accuracy" data-row-index="24">-</td>
+              </tr>
+              <tr>
+                <th>た</th>
+                <td class="accuracy" data-row-index="25">-</td>
+              </tr>
+              <tr>
+                <th>だ</th>
+                <td class="accuracy" data-row-index="26">-</td>
+              </tr>
+              <tr>
+                <th>ち</th>
+                <td class="accuracy" data-row-index="27">-</td>
+              </tr>
+              <tr>
+                <th>ぢ</th>
+                <td class="accuracy" data-row-index="28">-</td>
+              </tr>
+              <tr>
+                <th>つ</th>
+                <td class="accuracy" data-row-index="29">-</td>
+              </tr>
+	            <tr>
+                <th>づ</th>
+                <td class="accuracy" data-row-index="30">-</td>
+              </tr>
+              <tr>
+                <th>て</th>
+                <td class="accuracy" data-row-index="31">-</td>
+              </tr>
+              <tr>
+                <th>で</th>
+                <td class="accuracy" data-row-index="32">-</td>
+              </tr>
+              <tr>
+                <th>と</th>
+                <td class="accuracy" data-row-index="33">-</td>
+              </tr>
+              <tr>
+                <th>ど</th>
+                <td class="accuracy" data-row-index="34">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="column">
+          <table class="table3">
+            <thead>
+              <tr>
+                <th>ひらがな</th>
+                <th>正解率</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>な</th>
+                <td class="accuracy" data-row-index="35">-</td>
+              </tr>
+              <tr>
+                <th>に</th>
+                <td class="accuracy" data-row-index="36">-</td>
+              </tr>
+              <tr>
+                <th>ぬ</th>
+                <td class="accuracy" data-row-index="37">-</td>
+              </tr>
+              <tr>
+                <th>ね</th>
+                <td class="accuracy" data-row-index="38">-</td>
+              </tr>
+              <tr>
+                <th>の</th>
+                <td class="accuracy" data-row-index="39">-</td>
+              </tr>
+	            <tr>
+                <th>は</th>
+                <td class="accuracy" data-row-index="40">-</td>
+              </tr>
+              <tr>
+                <th>ば</th>
+                <td class="accuracy" data-row-index="41">-</td>
+              </tr>
+              <tr>
+                <th>ひ</th>
+                <td class="accuracy" data-row-index="42">-</td>
+              </tr>
+              <tr>
+                <th>び</th>
+                <td class="accuracy" data-row-index="43">-</td>
+              </tr>
+              <tr>
+                <th>ふ</th>
+                <td class="accuracy" data-row-index="44">-</td>
+              </tr>
+              <tr>
+                <th>ぶ</th>
+                <td class="accuracy" data-row-index="45">-</td>
+              </tr>
+              <tr>
+                <th>へ</th>
+                <td class="accuracy" data-row-index="46">-</td>
+              </tr>
+              <tr>
+                <th>べ</th>
+                <td class="accuracy" data-row-index="47">-</td>
+              </tr>
+              <tr>
+                <th>ほ</th>
+                <td class="accuracy" data-row-index="48">-</td>
+              </tr>
+              <tr>
+                <th>ぼ</th>
+                <td class="accuracy" data-row-index="49">-</td>
+              </tr>
+	            <tr>
+                <th>ま</th>
+                <td class="accuracy" data-row-index="50">-</td>
+              </tr>
+              <tr>
+                <th>み</th>
+                <td class="accuracy" data-row-index="51">-</td>
+              </tr>
+              <tr>
+                <th>む</th>
+                <td class="accuracy" data-row-index="52">-</td>
+              </tr>
+              <tr>
+                <th>め</th>
+                <td class="accuracy" data-row-index="53">-</td>
+              </tr>
+              <tr>
+                <th>も</th>
+                <td class="accuracy" data-row-index="54">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="column">
+          <table class="table4">
+            <thead>
+              <tr>
+                <th>ひらがな</th>
+                <th>正解率</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>や</th>
+                <td class="accuracy" data-row-index="55">-</td>
+              </tr>
+              <tr>
+                <th>ゆ</th>
+                <td class="accuracy" data-row-index="56">-</td>
+              </tr>
+              <tr>
+                <th>よ</th>
+                <td class="accuracy" data-row-index="57">-</td>
+              </tr>
+              <tr>
+                <th>ら</th>
+                <td class="accuracy" data-row-index="58">-</td>
+              </tr>
+              <tr>
+                <th>り</th>
+                <td class="accuracy" data-row-index="59">-</td>
+              </tr>
+	            <tr>
+                <th>る</th>
+                <td class="accuracy" data-row-index="60">-</td>
+              </tr>
+              <tr>
+                <th>れ</th>
+                <td class="accuracy" data-row-index="61">-</td>
+              </tr>
+              <tr>
+                <th>ろ</th>
+                <td class="accuracy" data-row-index="62">-</td>
+              </tr>
+              <tr>
+                <th>わ</th>
+                <td class="accuracy" data-row-index="63">-</td>
+              </tr>
+              <tr>
+                <th>ゐ</th>
+                <td class="accuracy" data-row-index="64">-</td>
+              </tr>
+              <tr>
+                <th>ゑ</th>
+                <td class="accuracy" data-row-index="65">-</td>
+              </tr>
+              <tr>
+                <th>を</th>
+                <td class="accuracy" data-row-index="66">-</td>
+              </tr>
+              <tr>
+                <th>ん</th>
+                <td class="accuracy" data-row-index="67">-</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
     </body>
 </html>

@@ -47,4 +47,48 @@ p {
 
 li {
     padding-bottom: 10px;
+    list-style: none;
+}
+
+.main {
+	float: left;
+	position: relative;
+	top: 50px;
+	left: 50px;
+}
+
+.column {
+	float: right;
+	position: relative;
+	top: 50px;
+    /*left: -750px;*/
+}
+
+.table1 {
+    position: relative;
+    left: -750px
+}
+
+.table2 {
+    position: relative;
+    left: -450px
+}
+
+.table3 {
+    position: relative;
+    left: -150px
+}
+
+.table4 {
+    position: relative;
+    left: 150px
+}
+
+.is-selected {
+	background-color: #a9a9a9;
+}
+
+td {
+    width: 65px;
+    text-align: center;
 }
