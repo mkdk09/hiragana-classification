@@ -2,13 +2,13 @@ import glob
 import os
 import re
 import keras
+from keras import callbacks
 from keras.utils import np_utils
 from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.models import Sequential
 from keras.layers.core import Dense, Dropout, Activation, Flatten
-from keras.preprocessing.image import array_to_img, img_to_array, load_img
+from keras.preprocessing.image import array_to_img, img_to_array, load_img, ImageDataGenerator
 import numpy as np
-import pandas as pd
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
@@ -47,6 +47,21 @@ Y = np_utils.to_categorical(Y, 68)
 
 X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.33, random_state=111)
 
+datagen = ImageDataGenerator(
+    featurewise_center=True,
+    featurewise_std_normalization=True,
+    rotation_range=20,
+    width_shift_range=0.2,
+    height_shift_range=0.2)
+
+datagen.fit(X_train)
+
+test_datagen = ImageDataGenerator(
+    featurewise_center=True,
+    featurewise_std_normalization=True)
+
+test_datagen.fit(X_test)
+
 model = Sequential()
 
 model.add(Conv2D(32, (3, 3), padding='same',
@@ -72,16 +87,25 @@ model.add(Dense(68))
 model.add(Activation('softmax'))
 
 model.compile(loss='categorical_crossentropy',
-              optimizer='SGD',
+              optimizer='Adam',
               metrics=['accuracy'])
 
+"""
 history = model.fit(X_train, y_train,  # 画像とラベルデータ
                     batch_size=8,
                     epochs=10,     # エポック数の指定
                     verbose=1,         # ログ出力の指定. 0だとログが出ない
                     validation_data=(X_test, y_test))
+"""
+
+fit_callbacks = [callbacks.EarlyStopping(monitor='val_loss', patience=5, mode='auto')]
+
+history = model.fit_generator(datagen.flow(X_train, y_train, batch_size=32),
+                                steps_per_epoch=len(X_train) / 32, epochs=30,
+                                verbose=1, validation_data=test_datagen.flow(X_test, y_test),
+                                callbacks=fit_callbacks)
 
 score = model.evaluate(X_test, y_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
-model.save('./sample_hiragana_cnn_model.h5')
+model.save('./DA_hiragana_cnn_model.h5')
