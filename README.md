@@ -4,4 +4,4 @@ https://mkdk09.github.io/hiragana-classification/
 
 # 使用データセット
 
-https://lab.ndl.go.jp/cms/hiragana73
+https://github.com/ndl-lab/hiragana_mojigazo/blob/master/readme.md
